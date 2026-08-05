@@ -3,7 +3,19 @@
 return 
 {
   aiClasses = {},
-  audio = {},
+  audio = {
+    cries = {},
+    mapSongs = {
+      MOD_MAP_SONGS_1 = "MOD_MUSIC_1",
+      PALLET_EAST = "MOD_MUSIC_1",
+    },
+    sfx = {},
+    songs = {
+      MOD_MUSIC_1 = {
+        file = "assets/final-fantasy-7-boss-theme.mp3",
+      },
+    },
+  },
   badgeGates = {},
   boot = {},
   constants = {},

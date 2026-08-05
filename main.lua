@@ -640,4 +640,12 @@ return function(mod)
     },
   })
 
+  mod.content.music:register("MOD_MUSIC_1", {
+    file = mod.path .. "/assets/final-fantasy-7-boss-theme.mp3",
+  })
+
+  mod.content.map_songs:override("MOD_MAP_SONGS_1", "MOD_MUSIC_1")
+
+  mod.content.map_songs:override("PALLET_EAST", "MOD_MUSIC_1")
+
 end
