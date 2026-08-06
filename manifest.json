@@ -1,17 +1,18 @@
 {
-  "id": "PALLET_EAST_TESTING",
-  "name": "Pallet East Testing",
-  "version": "0.1.0",
+  "id": "PALLET_CHAOS",
+  "name": "Pallet Chaos",
+  "version": "0.0.1",
   "api": 2,
   "entry": "main.lua",
   "profile": "content",
   "game_version": ">=0.0.0-dev <1.0.0",
   "category": "GAMEPLAY",
   "priority": 100,
+  "permissions": [],
   "dependencies": [],
   "optional_dependencies": [],
   "conflicts": [],
   "incompatible": [],
-  "experimental": false,
-  "description": "Authored with the Gen1Recomp content editor"
+  "experimental": true,
+  "description": "This is a experimental mod to test some mechanics and features for a much larger mod I am planning out and working on in the background. Have fun with whatever I shenanigans I have put in here. "
 }
