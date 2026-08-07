@@ -1,7 +1,7 @@
 {
   "id": "PALLET_CHAOS",
   "name": "Pallet Chaos",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "api": 2,
   "entry": "main.lua",
   "profile": "content",
@@ -14,6 +14,6 @@
   "conflicts": [],
   "incompatible": [],
   "experimental": true,
-  "description": "This is a experimental mod to test some mechanics and features for a much larger mod I am planning out and working on in the background. Have fun with whatever I shenanigans I have put in here. ",
+  "description": "\" \"",
   "github": "https://github.com/cleverleviathan/Pallet-Chaos"
 }

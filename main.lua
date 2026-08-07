@@ -2,88 +2,213 @@
 -- re-Save from the content editor, or maintain editor_project.lua).
 return function(mod)
 
+  mod.content.pokemon:patch("MAGIKARP", {
+    baseExp = 20,
+    baseStats = {
+      attack = 10,
+      defense = 55,
+      hp = 20,
+      special = 20,
+      speed = 80,
+    },
+    catchRate = 255,
+    dex = 129,
+    dexEntry = {
+      heightFt = 2,
+      heightIn = 11,
+      kind = "FISH",
+      text = "_MagikarpDexEntry",
+      weight = 220,
+    },
+    evolutions = {
+      {
+              level = 20,
+              method = "LEVEL",
+              species = "GYARADOS",
+            },
+    },
+    frontSize = 6,
+    growthRate = "SLOW",
+    id = "MAGIKARP",
+    index = 133,
+    learnset = {
+      {
+              level = 15,
+              move = "TACKLE",
+            },
+    },
+    level1Moves = {
+      "SPLASH",
+    },
+    name = "MAGIKARP",
+    tmhm = {},
+    types = {
+      "WATER",
+    },
+  })
+
   mod.content.maps:register("PALLET_EAST", {
     blocks = {
-      98,
-      81,
-      81,
-      81,
-      81,
-      81,
-      81,
-      81,
-      81,
-      99,
-      78,
-      123,
-      123,
-      123,
-      123,
-      123,
-      123,
-      123,
-      123,
-      77,
-      78,
-      123,
-      123,
-      123,
-      123,
-      123,
-      123,
-      123,
-      123,
-      77,
-      78,
-      123,
-      123,
-      123,
-      123,
-      123,
-      123,
-      123,
-      123,
-      77,
+      62,
+      40,
+      44,
+      44,
+      44,
+      44,
+      44,
+      41,
+      63,
+      59,
+      29,
+      30,
+      15,
+      15,
+      15,
+      62,
+      59,
+      15,
+      15,
+      15,
+      40,
+      36,
+      87,
+      87,
+      87,
+      87,
+      87,
+      37,
+      43,
+      112,
+      101,
+      100,
+      15,
+      53,
+      15,
+      36,
+      112,
+      15,
+      15,
+      15,
+      36,
+      87,
+      87,
+      87,
+      87,
+      87,
+      87,
+      87,
+      37,
+      110,
+      11,
+      11,
+      11,
       10,
-      123,
-      123,
-      123,
-      123,
-      123,
-      123,
-      123,
-      123,
-      77,
+      10,
+      10,
+      10,
+      15,
+      15,
+      15,
+      80,
+      82,
+      80,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      66,
+      111,
+      111,
+      111,
+      111,
+      111,
+      111,
+      10,
+      15,
+      15,
+      15,
+      85,
+      85,
+      85,
+      85,
+      85,
+      85,
+      85,
+      85,
+      85,
+      85,
+      85,
+      85,
+      85,
+      85,
+      85,
+      85,
+      85,
+      15,
+      15,
+      15,
+      98,
+      80,
+      11,
+      11,
+      11,
+      11,
+      11,
+      11,
+      79,
+      99,
+      82,
+      82,
+      82,
+      82,
+      82,
+      82,
+      82,
+      15,
+      15,
+      15,
       78,
-      123,
-      123,
-      123,
-      123,
-      123,
-      123,
-      123,
-      123,
+      70,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      71,
       77,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
       78,
-      123,
-      123,
-      123,
-      123,
-      123,
-      123,
-      123,
-      123,
+      74,
+      26,
+      26,
+      26,
+      26,
+      26,
+      26,
+      75,
       77,
-      78,
-      123,
-      123,
-      123,
-      123,
-      123,
-      123,
-      123,
-      123,
-      77,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
       80,
       82,
       82,
@@ -94,6 +219,16 @@ return function(mod)
       82,
       82,
       79,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
     },
     borderBlock = 0,
     connections = {
@@ -106,24 +241,51 @@ return function(mod)
     id = "PALLET_EAST",
     index = 1001,
     label = "Pallet East",
-    objects = {
-      {
-              index = 1,
-              movement = "STAY",
-              name = "Tony",
-              range = "DOWN",
-              sprite = "SPRITE_BIRD",
-              text = "TEXT_PALLET_EAST_TRAINER1",
-              trainerClass = "OPP_SUSPICIOUS_BIRD",
-              trainerParty = 2,
-              x = 10,
-              y = 8,
-            },
-    },
+    objects = {},
     signs = {},
     tileset = "OVERWORLD",
     warps = {},
-    width = 10,
+    width = 20,
+  })
+
+  mod.content.encounters:register("PALLET_EAST", {
+    grass = {
+      rate = 20,
+      slots = {
+        {
+                  level = 1,
+                  species = "BULBASAUR",
+                },
+        {
+                  level = 1,
+                  species = "PIKACHU",
+                },
+        {
+                  level = 1,
+                  species = "ODDISH",
+                },
+        {
+                  level = 1,
+                  species = "BELLSPROUT",
+                },
+        {
+                  level = 1,
+                  species = "MAGNEMITE",
+                },
+        {
+                  level = 1,
+                  species = "CHARMANDER",
+                },
+        {
+                  level = 1,
+                  species = "SQUIRTLE",
+                },
+        {
+                  level = 1,
+                  species = "ABRA",
+                },
+      },
+    },
   })
 
   mod.content.maps:patch("PALLET_TOWN", {
@@ -346,7 +508,7 @@ return function(mod)
       40,
       40,
       15,
-      108,
+      1,
       51,
       108,
       54,
@@ -409,7 +571,7 @@ return function(mod)
       44,
       44,
       41,
-      1,
+      11,
       1,
       1,
       1,
@@ -431,6 +593,7 @@ return function(mod)
         offset = 4,
       },
     },
+    environment = "outside",
     height = 10,
     id = "PALLET_WEST",
     index = 1005,
@@ -470,21 +633,12 @@ return function(mod)
               movement = "STAY",
               range = "DOWN",
               sprite = "SPRITE_BOULDER",
-              text = "TEXT_PALLET_WEST_OBJ4",
-              x = 12,
-              y = 18,
-            },
-      {
-              index = 5,
-              movement = "STAY",
-              range = "DOWN",
-              sprite = "SPRITE_BOULDER",
               text = "TEXT_PALLET_WEST_OBJ5",
               x = 8,
               y = 12,
             },
       {
-              index = 6,
+              index = 5,
               movement = "STAY",
               range = "DOWN",
               sprite = "SPRITE_BOULDER",
@@ -493,7 +647,7 @@ return function(mod)
               y = 3,
             },
       {
-              index = 7,
+              index = 6,
               movement = "STAY",
               range = "DOWN",
               sprite = "SPRITE_BOULDER",
@@ -502,7 +656,7 @@ return function(mod)
               y = 8,
             },
       {
-              index = 8,
+              index = 7,
               movement = "STAY",
               range = "DOWN",
               sprite = "SPRITE_BOULDER",
@@ -510,11 +664,35 @@ return function(mod)
               x = 3,
               y = 18,
             },
+      {
+              index = 8,
+              level = 100,
+              movement = "STAY",
+              pokemon = "MAGIKARP",
+              range = "DOWN",
+              sprite = "SPRITE_BOULDER",
+              text = "TEXT_PALLET_WEST_OBJ8",
+              x = 12,
+              y = 18,
+            },
     },
+    outdoor = true,
     signs = {},
     tileset = "OVERWORLD",
     warps = {},
     width = 10,
+  })
+
+  mod.content.encounters:register("PALLET_WEST", {
+    grass = {
+      rate = 25,
+      slots = {
+        {
+                  level = 3,
+                  species = "PIDGEY",
+                },
+      },
+    },
   })
 
   mod.content.maps:patch("REDS_HOUSE_1F", {
@@ -620,20 +798,23 @@ return function(mod)
     },
   })
 
-  mod.content.text:override("_PALLET_EASTTrainer1After", "You're strong.")
-  mod.content.text:override("_PALLET_EASTTrainer1Battle", "Welcome to the thunderdome! \
- \
- BITCH!")
-  mod.content.text:override("_PALLET_EASTTrainer1Won", "I lost...")
   mod.content.text:override("_PALLET_WESTTrainer1After", ".......")
   mod.content.text:override("_PALLET_WESTTrainer1Battle", ".......")
   mod.content.text:override("_PALLET_WESTTrainer1Won", "......")
+  mod.content.text:override("_PALLET_WESTWild8", "Gyaoo!")
+  mod.content.text:override("_PALLET_WESTWild9", "Gyaoo!")
   mod.content.text:override("_RedsHouse1FMomWakeUpText", "MOM: Right.\
 All boys leave\11home some day.\11It said so on TV.\12PROF.OAK, next\
 door, is looking\11for you. \
  \
  \
  and honey, please stay out of my room.")
+
+  mod.content.text_pointers:patch("Pallet west", {
+    TEXT_PALLET_WEST_OBJ8 = {
+      text = "_PALLET_WESTWild8",
+    },
+  })
 
   mod.content.text_pointers:patch("RedsHouse1F", {
     TEXT_REDSHOUSE1F_MOM = {
@@ -722,19 +903,32 @@ door, is looking\11for you. \
     },
   })
 
+  mod.content.trainers:register("OPP_SPEC_MAGIKARP_LEGEND", {
+    baseMoney = 0,
+    id = "OPP_SPEC_MAGIKARP_LEGEND",
+    name = "MAGIKARP",
+    parties = {
+      {
+              {
+                        dvs = {
+                          attack = 15,
+                          defense = 15,
+                          hp = 15,
+                          special = 15,
+                          speed = 15,
+                        },
+                        level = 100,
+                        moves = {
+                          "HYDRO_PUMP",
+                        },
+                        species = "MAGIKARP",
+                      },
+            },
+    },
+  })
+
   do
     local _ceTrainerHeaders = {
-      ["Pallet East"] = {
-        {
-                  after = "_PALLET_EASTTrainer1After",
-                  battle = "_PALLET_EASTTrainer1Battle",
-                  event = "MOD_PALLET_CHAOS_BEAT_PALLET_EAST_1",
-                  opponent = "OPP_SUSPICIOUS_BIRD",
-                  party = 2,
-                  range = 0,
-                  won = "_PALLET_EASTTrainer1Won",
-                },
-      },
       ["Pallet west"] = {
         {
                   after = "_PALLET_WESTTrainer1After",
@@ -795,37 +989,24 @@ door, is looking\11for you. \
   })
 
   -- event flags declared in the content editor:
-  --   MOD_
-  --   MOD_M
-  --   MOD_MO
-  --   MOD_MOM
-  --   MOD_MOMS
-  --   MOD_MOMS_
-  --   MOD_MOMS_S
-  --   MOD_MOMS_SE
-  --   MOD_MOMS_SEC
-  --   MOD_MOMS_SECR
-  --   MOD_MOMS_SECRE
-  --   MOD_MOMS_SECRET
-  --   MOD_PALLET_CHAOS_BEAT_PALLET_EAST_1
   --   MOD_PALLET_CHAOS_BEAT_PALLET_WEST_1
-  --   MOD_PALLET_CHAOS_DONE
-  --   MOD_PALLET_CHAOS_M
-  --   MOD_PALLET_CHAOS_MO
-  --   MOD_PALLET_CHAOS_MOD
-  --   MOD_PALLET_CHAOS__
-  --   MOD_PALLET_CHAOS__R
-  --   MOD_PALLET_CHAOS__RO
-  --   MOD_PALLET_CHAOS__ROW
-  --   MOD_PALLET_CHAOS__ROW_
-  --   MOD_PALLET_CHAOS__ROW_4
-  --   MOD_PALLET_EAST_TESTING_BEAT_PALLET_EAST_1
-  --   MOD_PALLET_EAST_TESTING_BEAT_PALLET_WEST_1
+
+  mod.content.map_songs:override("PALLET_EAST", "Music_PalletTown")
 
   mod.content.map_songs:override("PALLET_WEST", "Music_PalletTown")
 
   mod.content.field:patch("intro", {
     studio = {},
+  })
+
+  mod.content.field:patch("badgeGates", { ["PALLET_WEST"] = mod.DELETE })
+
+  mod.content.field:patch("darkMaps", {
+    maps = {
+      "ROCK_TUNNEL_1F",
+      "ROCK_TUNNEL_B1F",
+    },
+    palOffset = 6,
   })
 
 end
