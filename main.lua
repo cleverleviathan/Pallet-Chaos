@@ -10,6 +10,152 @@ return function(mod)
     walker = false,
   })
 
+  mod.content.tilesets:patch("OVERWORLD", {
+    animation = "TILEANIM_WATER_FLOWER",
+    blocks = {
+      { 10, 10, 40, 41, 75, 75, 75, 31, 10, 10, 10, 31, 26, 26, 26, 79 },
+      { 35, 35, 35, 35, 57, 35, 35, 35, 35, 35, 35, 35, 35, 35, 57, 35 },
+      { 5, 6, 7, 7, 21, 22, 23, 23, 37, 38, 11, 12, 78, 26, 27, 28 },
+      { 7, 7, 8, 9, 23, 23, 24, 25, 10, 10, 40, 41, 26, 26, 26, 79 },
+      { 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 42, 43, 20, 20, 58, 59 },
+      { 60, 60, 60, 60, 4, 60, 4, 60, 60, 60, 60, 60, 60, 60, 60, 60 },
+      { 17, 17, 17, 17, 17, 17, 17, 17, 72, 73, 55, 55, 88, 89, 55, 55 },
+      { 44, 44, 44, 44, 44, 44, 44, 44, 44, 44, 44, 44, 55, 55, 55, 55 },
+      { 57, 57, 57, 57, 57, 57, 57, 57, 57, 57, 70, 71, 57, 57, 86, 87 },
+      { 7, 7, 7, 7, 23, 23, 23, 23, 35, 10, 10, 35, 26, 26, 26, 26 },
+      { 44, 44, 44, 44, 44, 44, 44, 44, 44, 44, 44, 44, 44, 44, 44, 44 },
+      { 82, 82, 82, 82, 82, 82, 82, 82, 82, 82, 82, 82, 82, 82, 82, 82 },
+      { 5, 6, 83, 83, 21, 56, 18, 18, 21, 56, 18, 18, 21, 22, 23, 23 },
+      { 83, 83, 83, 83, 18, 18, 18, 18, 18, 18, 18, 18, 23, 23, 23, 23 },
+      { 83, 83, 8, 9, 18, 18, 56, 25, 18, 18, 56, 25, 23, 23, 24, 25 },
+      { 64, 65, 64, 65, 80, 81, 80, 81, 64, 65, 64, 65, 80, 81, 80, 81 },
+      { 37, 38, 10, 10, 15, 34, 34, 34, 15, 10, 10, 10, 78, 26, 26, 26 },
+      { 34, 47, 63, 34, 34, 34, 34, 34, 10, 10, 10, 10, 26, 26, 26, 26 },
+      { 10, 10, 40, 41, 34, 34, 34, 31, 11, 12, 10, 31, 27, 28, 26, 79 },
+      { 42, 43, 42, 43, 58, 59, 58, 59, 42, 43, 42, 43, 58, 59, 58, 59 },
+      { 42, 43, 20, 20, 58, 59, 20, 20, 42, 43, 42, 43, 58, 59, 58, 59 },
+      { 20, 20, 42, 43, 20, 20, 58, 59, 42, 43, 42, 43, 58, 59, 58, 59 },
+      { 42, 43, 42, 43, 58, 59, 58, 59, 42, 43, 20, 20, 58, 59, 20, 20 },
+      { 42, 43, 42, 43, 58, 59, 58, 59, 20, 20, 42, 43, 20, 20, 58, 59 },
+      { 42, 43, 20, 20, 58, 59, 20, 20, 42, 43, 20, 20, 58, 59, 20, 20 },
+      { 20, 20, 42, 43, 20, 20, 58, 59, 20, 20, 42, 43, 20, 20, 58, 59 },
+      { 57, 57, 57, 57, 57, 57, 57, 57, 57, 57, 57, 57, 54, 55, 55, 55 },
+      { 14, 14, 35, 35, 85, 85, 35, 35, 14, 14, 35, 35, 85, 85, 35, 35 },
+      { 35, 35, 35, 35, 57, 35, 35, 35, 64, 65, 64, 65, 80, 81, 80, 81 },
+      { 51, 51, 51, 51, 50, 20, 20, 20, 50, 20, 20, 20, 50, 20, 20, 20 },
+      { 51, 51, 51, 51, 20, 20, 20, 84, 20, 20, 20, 84, 20, 20, 20, 84 },
+      { 51, 51, 51, 51, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20 },
+      { 76, 83, 83, 83, 90, 18, 18, 18, 90, 18, 18, 18, 92, 23, 23, 23 },
+      { 83, 83, 83, 77, 18, 18, 18, 90, 18, 18, 18, 90, 23, 23, 23, 93 },
+      { 33, 35, 35, 16, 35, 35, 35, 16, 35, 35, 35, 16, 33, 35, 35, 16 },
+      { 32, 32, 32, 32, 35, 35, 35, 35, 35, 35, 35, 35, 32, 32, 32, 32 },
+      { 39, 39, 17, 17, 39, 39, 17, 17, 39, 54, 55, 55, 54, 55, 55, 55 },
+      { 17, 17, 36, 36, 17, 17, 36, 36, 55, 55, 52, 36, 55, 55, 55, 52 },
+      { 16, 35, 35, 33, 16, 35, 35, 35, 16, 35, 35, 35, 16, 35, 35, 33 },
+      { 16, 35, 35, 16, 16, 35, 35, 16, 16, 35, 35, 16, 16, 35, 35, 16 },
+      { 39, 39, 17, 17, 39, 39, 17, 17, 39, 39, 17, 17, 39, 39, 17, 17 },
+      { 17, 17, 36, 36, 17, 17, 36, 36, 17, 17, 36, 36, 17, 17, 36, 36 },
+      { 17, 17, 17, 17, 17, 17, 17, 17, 55, 19, 17, 17, 19, 39, 17, 17 },
+      { 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 53, 55, 17, 17, 36, 53 },
+      { 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17 },
+      { 20, 20, 20, 51, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20 },
+      { 51, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20 },
+      { 44, 44, 44, 44, 44, 44, 44, 44, 44, 44, 44, 44, 55, 52, 60, 60 },
+      { 5, 6, 7, 7, 21, 22, 23, 23, 37, 38, 10, 34, 78, 26, 26, 26 },
+      { 57, 57, 57, 57, 57, 57, 57, 57, 57, 57, 57, 57, 57, 57, 57, 57 },
+      { 64, 65, 45, 46, 80, 81, 61, 62, 64, 65, 44, 44, 80, 81, 44, 44 },
+      { 64, 65, 64, 65, 80, 81, 80, 81, 44, 44, 45, 46, 44, 44, 61, 62 },
+      { 45, 46, 44, 44, 61, 62, 44, 44, 64, 65, 64, 65, 80, 81, 80, 81 },
+      { 44, 44, 45, 46, 44, 44, 61, 62, 64, 65, 44, 44, 80, 81, 44, 44 },
+      { 64, 65, 64, 65, 80, 81, 80, 81, 44, 44, 64, 65, 44, 44, 80, 81 },
+      { 15, 10, 10, 10, 15, 75, 75, 75, 15, 75, 75, 75, 78, 26, 26, 26 },
+      { 35, 35, 35, 35, 57, 35, 35, 35, 5, 6, 7, 7, 21, 22, 23, 23 },
+      { 35, 35, 35, 35, 57, 35, 35, 35, 7, 7, 8, 9, 23, 23, 24, 25 },
+      { 10, 75, 75, 10, 75, 75, 75, 75, 11, 12, 10, 10, 27, 28, 26, 26 },
+      { 1, 1, 2, 57, 17, 17, 36, 2, 17, 17, 36, 36, 17, 17, 36, 36 },
+      { 37, 38, 10, 34, 92, 23, 23, 23, 15, 34, 11, 12, 78, 26, 27, 28 },
+      { 10, 10, 40, 41, 23, 23, 23, 93, 10, 10, 34, 31, 26, 26, 26, 79 },
+      { 35, 30, 1, 1, 30, 39, 17, 17, 39, 39, 17, 17, 39, 39, 17, 17 },
+      { 1, 1, 1, 1, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17 },
+      { 42, 43, 44, 44, 58, 59, 44, 44, 44, 44, 44, 44, 44, 44, 44, 44 },
+      { 44, 44, 44, 44, 44, 44, 44, 44, 42, 43, 44, 44, 58, 59, 44, 44 },
+      { 44, 44, 64, 65, 44, 44, 80, 81, 44, 44, 64, 65, 55, 52, 80, 81 },
+      { 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20 },
+      { 16, 35, 35, 33, 16, 35, 35, 35, 16, 35, 35, 35, 33, 32, 32, 32 },
+      { 33, 35, 35, 16, 35, 35, 35, 16, 35, 35, 35, 16, 32, 32, 32, 33 },
+      { 39, 57, 57, 57, 39, 57, 57, 57, 39, 57, 57, 57, 39, 57, 57, 57 },
+      { 57, 57, 13, 36, 57, 57, 13, 36, 57, 57, 13, 36, 57, 57, 13, 36 },
+      { 32, 32, 32, 33, 35, 35, 35, 16, 35, 35, 35, 16, 33, 35, 35, 16 },
+      { 33, 32, 32, 32, 16, 35, 35, 35, 16, 35, 35, 35, 16, 35, 35, 33 },
+      { 39, 57, 57, 57, 39, 57, 57, 57, 39, 57, 57, 57, 54, 55, 60, 60 },
+      { 57, 57, 13, 36, 57, 57, 13, 36, 57, 57, 13, 36, 54, 55, 55, 52 },
+      { 44, 44, 44, 44, 44, 44, 44, 44, 64, 65, 44, 44, 80, 81, 44, 44 },
+      { 44, 44, 42, 43, 44, 44, 58, 59, 44, 44, 42, 43, 44, 44, 58, 59 },
+      { 42, 43, 44, 44, 58, 59, 44, 44, 42, 43, 44, 44, 58, 59, 44, 44 },
+      { 44, 44, 42, 43, 44, 44, 58, 59, 42, 43, 42, 43, 58, 59, 58, 59 },
+      { 42, 43, 44, 44, 58, 59, 44, 44, 42, 43, 42, 43, 58, 59, 58, 59 },
+      { 42, 43, 42, 43, 58, 59, 58, 59, 44, 44, 44, 44, 44, 44, 44, 44 },
+      { 44, 44, 44, 44, 44, 44, 44, 44, 42, 43, 42, 43, 58, 59, 58, 59 },
+      { 44, 44, 42, 43, 44, 44, 58, 59, 44, 44, 44, 44, 44, 44, 44, 44 },
+      { 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60 },
+      { 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91, 91 },
+      { 57, 57, 57, 57, 57, 57, 57, 57, 14, 14, 70, 71, 85, 85, 86, 87 },
+      { 17, 17, 17, 17, 17, 17, 17, 17, 55, 55, 55, 55, 55, 55, 55, 55 },
+      { 39, 44, 44, 44, 39, 44, 44, 44, 39, 44, 44, 44, 39, 44, 44, 44 },
+      { 44, 44, 29, 36, 44, 44, 29, 36, 44, 44, 29, 36, 44, 44, 29, 36 },
+      { 39, 44, 44, 44, 39, 44, 44, 44, 39, 44, 44, 44, 54, 55, 55, 55 },
+      { 44, 44, 29, 36, 44, 44, 29, 36, 44, 44, 29, 36, 55, 55, 55, 52 },
+      { 57, 57, 57, 57, 57, 57, 57, 57, 57, 57, 57, 57, 60, 60, 54, 55 },
+      { 33, 35, 35, 33, 16, 35, 35, 16, 16, 35, 35, 16, 16, 35, 35, 16 },
+      { 16, 35, 35, 16, 16, 35, 35, 16, 16, 35, 35, 16, 33, 35, 35, 33 },
+      { 35, 35, 14, 14, 35, 35, 85, 85, 35, 35, 14, 14, 35, 35, 85, 85 },
+      { 44, 44, 64, 65, 44, 44, 80, 81, 45, 46, 64, 65, 61, 62, 80, 81 },
+      { 57, 57, 57, 57, 57, 57, 57, 57, 42, 43, 42, 43, 58, 59, 58, 59 },
+      { 42, 43, 42, 43, 58, 59, 58, 59, 42, 43, 44, 44, 58, 59, 44, 44 },
+      { 42, 43, 42, 43, 58, 59, 58, 59, 44, 44, 42, 43, 44, 44, 58, 59 },
+      { 20, 20, 20, 84, 20, 20, 20, 84, 20, 20, 20, 84, 20, 20, 20, 84 },
+      { 50, 20, 20, 20, 50, 20, 20, 20, 50, 20, 20, 20, 50, 20, 20, 20 },
+      { 50, 20, 20, 84, 50, 20, 20, 84, 50, 20, 20, 84, 50, 20, 20, 84 },
+      { 42, 43, 51, 51, 58, 59, 20, 20, 42, 43, 20, 20, 58, 59, 20, 20 },
+      { 15, 10, 10, 10, 15, 75, 75, 75, 15, 10, 10, 10, 15, 75, 75, 75 },
+      { 10, 10, 10, 31, 75, 75, 75, 31, 10, 10, 10, 31, 75, 75, 75, 31 },
+      { 51, 51, 42, 43, 20, 20, 58, 59, 20, 20, 42, 43, 20, 20, 58, 59 },
+      { 20, 20, 20, 20, 20, 20, 20, 20, 42, 43, 42, 43, 58, 59, 58, 59 },
+      { 64, 65, 64, 65, 80, 81, 80, 81, 44, 44, 44, 44, 44, 44, 44, 44 },
+      { 64, 65, 44, 44, 80, 81, 44, 44, 64, 65, 44, 44, 80, 81, 44, 44 },
+      { 44, 44, 64, 65, 44, 44, 80, 81, 44, 44, 64, 65, 44, 44, 80, 81 },
+      { 44, 44, 44, 44, 44, 44, 44, 44, 64, 65, 64, 65, 80, 81, 80, 81 },
+      { 17, 17, 36, 36, 17, 17, 36, 36, 72, 73, 52, 36, 88, 89, 55, 52 },
+      { 18, 18, 18, 18, 18, 18, 18, 18, 23, 23, 23, 23, 34, 34, 34, 34 },
+      { 10, 10, 10, 31, 75, 75, 75, 31, 66, 67, 75, 31, 74, 74, 26, 79 },
+      { 10, 10, 10, 31, 75, 75, 75, 31, 68, 69, 75, 31, 74, 74, 26, 79 },
+      { 44, 44, 44, 44, 44, 3, 44, 3, 3, 44, 3, 44, 44, 44, 44, 44 },
+      { 21, 56, 18, 18, 21, 56, 18, 18, 21, 22, 23, 23, 37, 38, 34, 34 },
+      { 18, 18, 56, 25, 18, 18, 56, 25, 23, 23, 24, 25, 34, 34, 40, 41 },
+      { 57, 57, 57, 57, 57, 57, 57, 57, 14, 14, 14, 14, 85, 85, 85, 85 },
+      { 49, 49, 49, 49, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20 },
+      { 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 70, 71, 48, 48, 86, 87 },
+      { 44, 48, 44, 48, 48, 44, 48, 44, 44, 48, 44, 48, 48, 44, 48, 44 },
+      { 48, 57, 48, 57, 57, 48, 57, 48, 48, 57, 48, 57, 57, 48, 57, 48 },
+      { 15, 10, 10, 10, 15, 75, 75, 75, 15, 75, 11, 12, 78, 26, 27, 28 },
+      { 10, 10, 10, 10, 75, 75, 75, 75, 75, 75, 75, 75, 26, 26, 26, 26 },
+      { 10, 10, 10, 31, 75, 75, 75, 31, 75, 75, 75, 31, 26, 26, 26, 79 },
+      { 10, 10, 10, 10, 75, 75, 75, 75, 10, 10, 10, 10, 75, 75, 75, 75 },
+    },
+    counterTiles = {},
+    doorTiles = { 27, 88 },
+    grassTile = 82,
+    id = "OVERWORLD",
+    image = "assets/generated/tilesets/overworld.png",
+    imageHeight = 48,
+    imageWidth = 128,
+    shoreTiles = {},
+    tilesPerRow = 16,
+    walkable = { 0, 16, 17, 27, 32, 33, 35, 44, 45, 46, 48, 49, 51, 57, 60, 62, 82, 84, 88, 91 },
+    warpTiles = { 27, 88 },
+    waterTiles = {},
+  })
+
   mod.content.maps:register("PALLET_EAST", {
     blocks = {
       98,
@@ -46,9 +192,9 @@ return function(mod)
       123,
       123,
       123,
-      123,
-      123,
-      123,
+      62,
+      63,
+      59,
       123,
       123,
       77,
@@ -56,9 +202,9 @@ return function(mod)
       123,
       123,
       123,
-      123,
-      123,
-      123,
+      40,
+      116,
+      41,
       123,
       123,
       77,
@@ -66,9 +212,9 @@ return function(mod)
       123,
       123,
       123,
-      123,
-      123,
-      123,
+      36,
+      87,
+      37,
       123,
       123,
       77,
@@ -103,7 +249,7 @@ return function(mod)
       82,
       79,
     },
-    borderBlock = 0,
+    borderBlock = 63,
     connections = {
       west = {
         map = "PALLET_TOWN",
@@ -117,19 +263,33 @@ return function(mod)
     objects = {
       {
               index = 1,
-              movement = "STAY",
+              movement = "WALK",
+              name = "Tony",
               range = "DOWN",
               sprite = "SPRITE_BIRD",
               text = "TEXT_PALLET_EAST_TRAINER1",
               trainerClass = "OPP_SUSPICIOUS_BIRB",
-              trainerParty = 1,
-              x = 7,
-              y = 7,
+              trainerParty = 3,
+              x = 10,
+              y = 9,
             },
     },
     signs = {},
     tileset = "OVERWORLD",
-    warps = {},
+    warps = {
+      {
+              destMap = "PALLET_EAST",
+              destWarp = 2,
+              x = 12,
+              y = 7,
+            },
+      {
+              destMap = "PALLET_WEST",
+              destWarp = 1,
+              x = 9,
+              y = 7,
+            },
+    },
     width = 10,
   })
 
@@ -328,6 +488,8 @@ return function(mod)
     width = 10,
   })
 
+  mod.content.encounters:patch("PALLET_TOWN", {})
+
   mod.content.maps:register("PALLET_WEST", {
     blocks = {
       62,
@@ -417,7 +579,7 @@ return function(mod)
       44,
       41,
       1,
-      1,
+      49,
       1,
       1,
       28,
@@ -431,7 +593,7 @@ return function(mod)
       28,
       28,
     },
-    borderBlock = 0,
+    borderBlock = 116,
     connections = {
       east = {
         map = "PALLET_TOWN",
@@ -448,23 +610,12 @@ return function(mod)
               movement = "STAY",
               range = "DOWN",
               sprite = "SPRITE_BOULDER",
-              text = "TEXT_PALLET_WEST_TRAINER1",
-              trainerClass = "OPP_SUSPICIOUS_BIRB",
-              trainerParty = 3,
-              x = 15,
-              y = 12,
-            },
-      {
-              index = 2,
-              movement = "STAY",
-              range = "DOWN",
-              sprite = "SPRITE_BOULDER",
               text = "TEXT_PALLET_WEST_OBJ2",
               x = 19,
               y = 13,
             },
       {
-              index = 3,
+              index = 2,
               movement = "STAY",
               range = "DOWN",
               sprite = "SPRITE_BOULDER",
@@ -473,7 +624,7 @@ return function(mod)
               y = 16,
             },
       {
-              index = 4,
+              index = 3,
               movement = "STAY",
               range = "DOWN",
               sprite = "SPRITE_BOULDER",
@@ -482,7 +633,7 @@ return function(mod)
               y = 18,
             },
       {
-              index = 5,
+              index = 4,
               movement = "STAY",
               range = "DOWN",
               sprite = "SPRITE_BOULDER",
@@ -491,7 +642,7 @@ return function(mod)
               y = 12,
             },
       {
-              index = 6,
+              index = 5,
               movement = "STAY",
               range = "DOWN",
               sprite = "SPRITE_BOULDER",
@@ -500,7 +651,7 @@ return function(mod)
               y = 3,
             },
       {
-              index = 7,
+              index = 6,
               movement = "STAY",
               range = "DOWN",
               sprite = "SPRITE_BOULDER",
@@ -509,7 +660,7 @@ return function(mod)
               y = 8,
             },
       {
-              index = 8,
+              index = 7,
               movement = "STAY",
               range = "DOWN",
               sprite = "SPRITE_BOULDER",
@@ -517,12 +668,33 @@ return function(mod)
               x = 3,
               y = 18,
             },
+      {
+              index = 8,
+              movement = "STAY",
+              name = "Miguel",
+              range = "DOWN",
+              sprite = "SPRITE_BOULDER",
+              text = "TEXT_PALLET_WEST_TRAINER8",
+              trainerClass = "OPP_SUSPICIOUS_BIRB",
+              trainerParty = 2,
+              x = 15,
+              y = 12,
+            },
     },
     signs = {},
     tileset = "OVERWORLD",
-    warps = {},
+    warps = {
+      {
+              destMap = "PALLET_EAST",
+              destWarp = 1,
+              x = 19,
+              y = 16,
+            },
+    },
     width = 10,
   })
+
+  mod.content.encounters:register("PALLET_WEST", {})
 
   mod.content.field:patch("superRod", {
     PALLET_TOWN = {
@@ -545,8 +717,11 @@ return function(mod)
   mod.content.text:override("_PALLET_WESTTrainer1After", ".......")
   mod.content.text:override("_PALLET_WESTTrainer1Battle", ".......")
   mod.content.text:override("_PALLET_WESTTrainer1Won", "......")
+  mod.content.text:override("_PALLET_WESTTrainer8After", "You're strong.")
+  mod.content.text:override("_PALLET_WESTTrainer8Battle", "Let's fight!")
+  mod.content.text:override("_PALLET_WESTTrainer8Won", "I lost...")
 
-  mod.content.trainers:register("OPP_SUSPICIOUS_BIRB", {
+  mod.content.trainers:patch("OPP_SUSPICIOUS_BIRB", {
     aiMods = { 1 },
     baseMoney = 20,
     basePic = "SPRITE_PAPER",
@@ -554,32 +729,6 @@ return function(mod)
     index = 200,
     name = "SUSPICIOUS BIRB",
     parties = {
-      {
-              {
-                        dvs = {
-                          attack = 15,
-                          defense = 15,
-                          hp = 15,
-                          special = 15,
-                          speed = 15,
-                        },
-                        level = 100,
-                        moves = {
-                          "PSYCHIC",
-                          "RECOVER",
-                          "MIST",
-                          "AMNESIA",
-                        },
-                        species = "MEWTWO",
-                        statExp = {
-                          attack = 255,
-                          defense = 255,
-                          hp = 500,
-                          special = 255,
-                          speed = 255,
-                        },
-                      },
-            },
       {
               {
                         level = 5,
@@ -592,60 +741,84 @@ return function(mod)
                         species = "DITTO",
                       },
             },
-    },
-    pic = mod.path .. "/assets/suspicious_bird.png",
-  })
-
-  mod.content.trainers:register("OPP_SUSPICIOUS_BIRD", {
-    aiMods = { 1 },
-    baseMoney = 20,
-    basePic = "OPP_BLACKBELT",
-    id = "OPP_SUSPICIOUS_BIRD",
-    index = 200,
-    name = "SUSPICIOUS BIRD",
-    parties = {
       {
               {
-                        level = 5,
-                        species = "PIDGEY",
+                        level = 15,
+                        species = "MEWTWO",
                       },
             },
     },
+    pic = "mods/PALLET_CHAOS/assets/suspicious_bird.png",
   })
 
-  assert(mod.content.trainer_headers,
-    "engine missing mod.content.trainer_headers — update Gen1Recomp / Linked Recomp")
-
-  mod.content.trainer_headers:patch("Pallet East", {
-    [0] = mod.DELETE,
-    [1] = {
-      after = "_PALLET_EASTTrainer1After",
-      battle = "_PALLET_EASTTrainer1Battle",
-      event = "MOD_PALLET_EAST_TESTING_BEAT_PALLET_EAST_1",
-      opponent = "OPP_SUSPICIOUS_BIRB",
-      party = 1,
-      range = 2,
-      won = "_PALLET_EASTTrainer1Won",
-    },
-  })
-
-  mod.content.trainer_headers:patch("Pallet west", {
-    [0] = mod.DELETE,
-    [1] = {
-      after = "_PALLET_WESTTrainer1After",
-      battle = "_PALLET_WESTTrainer1Battle",
-      event = "MOD_PALLET_CHAOS_BEAT_PALLET_WEST_1",
-      opponent = "OPP_SUSPICIOUS_BIRB",
-      party = 3,
-      range = 0,
-      won = "_PALLET_WESTTrainer1Won",
-    },
-  })
+  do
+    local _ceTrainerHeaders = {
+      ["Pallet East"] = {
+        {
+                  after = "_PALLET_EASTTrainer1After",
+                  battle = "_PALLET_EASTTrainer1Battle",
+                  event = "MOD_PALLET_CHAOS_BEAT_PALLET_EAST_1",
+                  opponent = "OPP_SUSPICIOUS_BIRB",
+                  party = 3,
+                  range = 0,
+                  won = "_PALLET_EASTTrainer1Won",
+                },
+      },
+      ["Pallet west"] = {
+        [1] = {
+          after = "_PALLET_WESTTrainer1After",
+          battle = "_PALLET_WESTTrainer1Battle",
+          event = "MOD_PALLET_CHAOS_BEAT_PALLET_WEST_1",
+          opponent = "OPP_SUSPICIOUS_BIRB",
+          party = 2,
+          range = 0,
+          won = "_PALLET_WESTTrainer1Won",
+        },
+        [8] = {
+          after = "_PALLET_WESTTrainer8After",
+          battle = "_PALLET_WESTTrainer8Battle",
+          event = "MOD_PALLET_CHAOS_BEAT_PALLET_WEST_8",
+          opponent = "OPP_SUSPICIOUS_BIRB",
+          party = 2,
+          range = 0,
+          won = "_PALLET_WESTTrainer8Won",
+        },
+      },
+    }
+    if mod.content.trainer_headers then
+      for label, bucket in pairs(_ceTrainerHeaders) do
+        local patch = { [0] = mod.DELETE }
+        for idx, hdr in pairs(bucket) do patch[idx] = hdr end
+        mod.content.trainer_headers:patch(label, patch)
+      end
+    else
+      mod.events:on("mods.loaded", function(ev)
+        local th = ev.data and ev.data.trainer_headers
+        if type(th) ~= "table" then return end
+        for label, bucket in pairs(_ceTrainerHeaders) do
+          local dest = th[label]
+          if type(dest) ~= "table" then
+            dest = {}
+            th[label] = dest
+          end
+          for idx, hdr in pairs(bucket) do
+            if type(idx) == "number" and type(hdr) == "table" then
+              dest[idx] = hdr
+            end
+          end
+        end
+      end)
+    end
+  end
 
   -- event flags declared in the content editor:
+  --   MOD_PALLET_CHAOS_BEAT_PALLET_EAST_1
   --   MOD_PALLET_CHAOS_BEAT_PALLET_WEST_1
+  --   MOD_PALLET_CHAOS_BEAT_PALLET_WEST_8
   --   MOD_PALLET_EAST_TESTING_BEAT_PALLET_EAST_1
   --   MOD_PALLET_EAST_TESTING_BEAT_PALLET_WEST_1
+
+  mod.content.map_songs:override("PALLET_EAST", "Music_PalletTown")
 
   mod.content.map_songs:override("PALLET_WEST", "Music_PalletTown")
 
