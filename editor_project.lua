@@ -678,9 +678,7 @@ return
                 },
         {
                   index = 8,
-                  level = 100,
                   movement = "STAY",
-                  pokemon = "MAGIKARP",
                   range = "DOWN",
                   sprite = "SPRITE_BOULDER",
                   text = "TEXT_PALLET_WEST_OBJ8",
@@ -840,32 +838,7 @@ return
       },
     },
   },
-  profile = "content",
-  specialEncounters = {
-    MAGIKARP_LEGEND = {
-      after = "I already gave you one.",
-      bindTextId = "",
-      dvs = {
-        attack = 15,
-        defense = 15,
-        hp = 15,
-        special = 15,
-        speed = 15,
-      },
-      flag = "GOT_MAGIKARP_LEGEND",
-      id = "MAGIKARP_LEGEND",
-      kind = "battle",
-      level = 100,
-      mapId = "PALLET_TOWN_WEST",
-      moves = {
-        "HYDRO_PUMP",
-      },
-      species = "MAGIKARP",
-      text = "Wow! A legendary MAGIKARP!",
-      unique = true,
-      won = "You're amazing!",
-    },
-  },
+
   sprites = {},
   starterRemap = {},
   strings = {},
@@ -948,32 +921,6 @@ door, is looking\11for you. \
       parties = {
         {
                   {
-                              dvs = {
-                                attack = 15,
-                                defense = 15,
-                                hp = 15,
-                                special = 15,
-                                speed = 15,
-                              },
-                              level = 100,
-                              moves = {
-                                "PSYCHIC",
-                                "RECOVER",
-                                "MIST",
-                                "AMNESIA",
-                              },
-                              species = "MEWTWO",
-                              statExp = {
-                                attack = 255,
-                                defense = 255,
-                                hp = 500,
-                                special = 255,
-                                speed = 255,
-                              },
-                            },
-                },
-        {
-                  {
                               level = 5,
                               species = "PIDGEY",
                             },
@@ -1000,12 +947,6 @@ door, is looking\11for you. \
                   {
                               level = 5,
                               species = "PIDGEY",
-                            },
-                },
-        {
-                  {
-                              level = 5,
-                              species = "MEWTWO",
                             },
                 },
       },

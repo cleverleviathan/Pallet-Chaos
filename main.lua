@@ -666,9 +666,7 @@ return function(mod)
             },
       {
               index = 8,
-              level = 100,
               movement = "STAY",
-              pokemon = "MAGIKARP",
               range = "DOWN",
               sprite = "SPRITE_BOULDER",
               text = "TEXT_PALLET_WEST_OBJ8",
@@ -840,32 +838,6 @@ door, is looking\11for you. \
     parties = {
       {
               {
-                        dvs = {
-                          attack = 15,
-                          defense = 15,
-                          hp = 15,
-                          special = 15,
-                          speed = 15,
-                        },
-                        level = 100,
-                        moves = {
-                          "PSYCHIC",
-                          "RECOVER",
-                          "MIST",
-                          "AMNESIA",
-                        },
-                        species = "MEWTWO",
-                        statExp = {
-                          attack = 255,
-                          defense = 255,
-                          hp = 500,
-                          special = 255,
-                          speed = 255,
-                        },
-                      },
-            },
-      {
-              {
                         level = 5,
                         species = "PIDGEY",
                       },
@@ -894,38 +866,10 @@ door, is looking\11for you. \
                         species = "PIDGEY",
                       },
             },
-      {
-              {
-                        level = 5,
-                        species = "MEWTWO",
-                      },
-            },
     },
   })
 
-  mod.content.trainers:register("OPP_SPEC_MAGIKARP_LEGEND", {
-    baseMoney = 0,
-    id = "OPP_SPEC_MAGIKARP_LEGEND",
-    name = "MAGIKARP",
-    parties = {
-      {
-              {
-                        dvs = {
-                          attack = 15,
-                          defense = 15,
-                          hp = 15,
-                          special = 15,
-                          speed = 15,
-                        },
-                        level = 100,
-                        moves = {
-                          "HYDRO_PUMP",
-                        },
-                        species = "MAGIKARP",
-                      },
-            },
-    },
-  })
+
 
   do
     local _ceTrainerHeaders = {
