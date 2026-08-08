@@ -23,6 +23,20 @@ return
     palOffset = 6,
   },
   eventFlags = {
+    MOD_ = true,
+    MOD_P = true,
+    MOD_PA = true,
+    MOD_PAL = true,
+    MOD_PALL = true,
+    MOD_PALLE = true,
+    MOD_PALLET = true,
+    MOD_PALLET_ = true,
+    MOD_PALLET_C = true,
+    MOD_PALLET_CH = true,
+    MOD_PALLET_CHA = true,
+    MOD_PALLET_CHAO = true,
+    MOD_PALLET_CHAOS = true,
+    MOD_PALLET_CHAOS_ = true,
     MOD_PALLET_CHAOS_BEAT_PALLET_WEST_1 = true,
     MOD_PALLET_CHAOS_BEAT_VICTORY_ROAD_1F_1 = true,
     MOD_PALLET_CHAOS_BEAT_VICTORY_ROAD_1F_2 = true,
@@ -42,18 +56,68 @@ return
     MOD_PALLET_CHAOS_HIDE_OBJE = true,
     MOD_PALLET_CHAOS_HIDE_OBJEC = true,
     MOD_PALLET_CHAOS_HIDE_OBJECT = true,
+    MOD_PALLET_CHAOS_M = true,
+    MOD_PALLET_CHAOS_MO = true,
+    MOD_PALLET_CHAOS_MOD = true,
+    MOD_PALLET_CHAOS_R = true,
+    MOD_PALLET_CHAOS_RO = true,
+    MOD_PALLET_CHAOS_ROU = true,
+    MOD_PALLET_CHAOS_ROUT = true,
+    MOD_PALLET_CHAOS_ROUTE = true,
+    MOD_PALLET_CHAOS_ROUTE_ = true,
+    MOD_PALLET_CHAOS_ROUTE_1 = true,
+    MOD_PALLET_CHAOS_ROUTE_1_ = true,
+    MOD_PALLET_CHAOS_ROUTE_1_O = true,
+    MOD_PALLET_CHAOS_ROUTE_1_OA = true,
+    MOD_PALLET_CHAOS_ROUTE_1_OAK = true,
+    MOD_PALLET_CHAOS_ROUTE_1_OAKS = true,
+    MOD_PALLET_CHAOS_ROUTE_1_OAKS_ = true,
+    MOD_PALLET_CHAOS_ROUTE_1_OAKS_P = true,
+    MOD_PALLET_CHAOS_ROUTE_1_OAKS_PA = true,
+    MOD_PALLET_CHAOS_ROUTE_1_OAKS_PAR = true,
+    MOD_PALLET_CHAOS_ROUTE_1_OAKS_PARC = true,
+    MOD_PALLET_CHAOS_ROUTE_1_OAKS_PARCE = true,
+    MOD_PALLET_CHAOS_ROUTE_1_OAKS_PARCEL = true,
+    MOD_PALLET_CHAOS_ROUTE_1_OAK_ = true,
+    MOD_PALLET_CHAOS_ROUTE_1_OAK_P = true,
+    MOD_PALLET_CHAOS_ROUTE_1_OAK_PA = true,
+    MOD_PALLET_CHAOS_ROUTE_1_OAK_PAR = true,
+    MOD_PALLET_CHAOS_ROUTE_1_OAK_PARC = true,
+    MOD_PALLET_CHAOS_ROUTE_1_OAK_PARCE = true,
+    MOD_PALLET_CHAOS_ROUTE_1_OAK_PARCEL = true,
+    MOD_PALLET_CHAS = true,
+    MOD_PALLET_CHASO = true,
   },
   fishing = {},
   flyWarps = {},
   font = {},
-  hiddenItems = {},
+  hiddenItems = {
+    OAKS_LAB = {
+      {
+              item = "MOMS_KEY",
+              x = 1,
+              y = 3,
+            },
+    },
+  },
   id = "PALLET_CHAOS",
   intro = {
     studio = {},
   },
-  items = {},
+  items = {
+    MOMS_KEY = {
+      _isNew = true,
+      effectTemplate = "none",
+      healAmount = 20,
+      id = "MOMS_KEY",
+      name = "MOMS_KEY",
+      price = 9999,
+      tossable = false,
+    },
+  },
   ledges = {},
   mapHooks = {
+    OAKS_LAB = {},
     PALLET_TOWN = {
       onEnter = {
         steps = {
@@ -78,17 +142,127 @@ return
                         "PALLET_BOULDER",
                       },
                     },
+          {
+                      kind = "raw",
+                      note = "move_npc_to 8 11 1",
+                      row = {
+                        "move_npc_to",
+                        8,
+                        11,
+                        1,
+                      },
+                    },
         },
       },
       scripts = {},
     },
+    REDS_HOUSE_1F = {
+      onStepCells = {
+        {
+                  steps = {},
+                  x = 0,
+                  y = 0,
+                },
+        {
+                  steps = {},
+                  x = 0,
+                  y = 0,
+                },
+        {
+                  steps = {
+                    {
+                                  kind = "raw",
+                                  note = "check_item MOMS_KEY",
+                                  row = {
+                                    "check_item",
+                                    "MOMS_KEY",
+                                  },
+                                },
+                    {
+                                  kind = "jump_if_yes",
+                                  name = "_row_6",
+                                },
+                    {
+                                  kind = "jump_if_no",
+                                  name = "_row_4",
+                                },
+                    {
+                                  kind = "label",
+                                  name = "_row_4",
+                                },
+                    {
+                                  kind = "raw",
+                                  note = "move_player right 1",
+                                  row = {
+                                    "move_player",
+                                    "right",
+                                    1,
+                                  },
+                                },
+                    {
+                                  kind = "show_text",
+                                  text = "Mom asked me to stay out, it's locked anyways.",
+                                },
+                    {
+                                  kind = "jump",
+                                  name = "end",
+                                },
+                    {
+                                  kind = "label",
+                                  name = "_row_6",
+                                },
+                    {
+                                  kind = "raw",
+                                  note = "warp REDS_HOUSE_3F 5 1 left",
+                                  row = {
+                                    "warp",
+                                    "REDS_HOUSE_3F",
+                                    5,
+                                    1,
+                                    "left",
+                                  },
+                                },
+                  },
+                  x = 5,
+                  y = 1,
+                },
+      },
+    },
     REDS_HOUSE_2F = {},
+    REDS_HOUSE_3F = {},
     VIRIDIAN_CITY = {
       onEnter = {
         steps = {
           {
+                      after = "I already gave you one.",
+                      choseFlag = "EVENT_CHOSE_BULBASAUR",
+                      count = 1,
+                      flag = "MOD_PALLET_CHAOS_ROUTE_1_OAKS_PARCEL",
+                      item = "POTION",
+                      kind = "check_flag_missing",
+                      level = 5,
+                      name = "",
+                      note = "check_flag MOD_PALLET_CHAOS_ROUTE_1_OAKS_PARCEL",
+                      path = "",
+                      rivalStarter = 1,
+                      row = {
+                        "check_flag",
+                        "MOD_PALLET_CHAOS_ROUTE_1_OAKS_PARCEL",
+                      },
+                      species = "PIKACHU",
+                      text = "",
+                    },
+          {
                       item = "OAKS_PARCEL",
                       kind = "check_item_missing",
+                    },
+          {
+                      kind = "show_text",
+                      text = "They seemed close to done clearing Route 1.... \12 Maybe I should go check!",
+                    },
+          {
+                      flag = "MOD_PALLET_CHAOS_ROUTE_1_OAKS_PARCEL",
+                      kind = "clear_flag",
                     },
           {
                       kind = "raw",
@@ -101,41 +275,44 @@ return
                     },
           {
                       kind = "raw",
-                      note = "wait 10",
+                      note = "hide_object PALLET_TOWN PALLET_WORKER_1",
                       row = {
-                        "wait",
-                        10,
+                        "hide_object",
+                        "PALLET_TOWN",
+                        "PALLET_WORKER_1",
                       },
                     },
           {
                       kind = "raw",
-                      note = "face east",
+                      note = "show_object PALLET_TOWN PALLET_BLOCKED_SCIENTIST",
                       row = {
-                        "face",
-                        "east",
+                        "show_object",
+                        "PALLET_TOWN",
+                        "PALLET_BLOCKED_SCIENTIST",
                       },
                     },
+        },
+      },
+      scripts = {},
+    },
+    VIRIDIAN_MART = {
+      onEnter = {
+        steps = {
           {
                       kind = "raw",
-                      note = "face_object 8 west",
+                      note = "check_item OAKS_PARCEL",
                       row = {
-                        "face_object",
-                        8,
-                        "west",
+                        "check_item",
+                        "OAKS_PARCEL",
                       },
                     },
           {
-                      kind = "show_text",
-                      text = "_ROUTE_1_BIRD_TEXT",
+                      kind = "jump_if_yes",
+                      name = "end",
                     },
           {
-                      kind = "raw",
-                      note = "face_object 8 south",
-                      row = {
-                        "face_object",
-                        8,
-                        "south",
-                      },
+                      flag = "ROUTE_1_OAKS_PARCEL",
+                      kind = "set_flag",
                     },
         },
       },
@@ -542,7 +719,7 @@ return
         {
                   index = 4,
                   movement = "STAY",
-                  name = "PALLET_BOULDER",
+                  name = "PALLET_BOULDER_1",
                   range = "DOWN",
                   sprite = "SPRITE_BOULDER",
                   text = "TEXT_PALLET_TOWN_OBJ4",
@@ -552,7 +729,7 @@ return
         {
                   index = 5,
                   movement = "STAY",
-                  name = "PALLET_BOULDER",
+                  name = "PALLET_BOULDER_1",
                   range = "DOWN",
                   sprite = "SPRITE_BOULDER",
                   text = "TEXT_PALLET_TOWN_OBJ5",
@@ -578,6 +755,27 @@ return
                   text = "TEXT_PALLET_TOWN_OBJ7",
                   x = 19,
                   y = 9,
+                },
+        {
+                  index = 8,
+                  movement = "STAY",
+                  name = "PALLET_WORKER_1",
+                  range = "RIGHT",
+                  sprite = "SPRITE_SAFARI_ZONE_WORKER",
+                  text = "TEXT_PALLET_TOWN_OBJ8",
+                  x = 18,
+                  y = 8,
+                },
+        {
+                  hidden = true,
+                  index = 9,
+                  movement = "STAY",
+                  name = "PALLET_BLOCKED_SCIENTIST",
+                  range = "DOWN",
+                  sprite = "SPRITE_SCIENTIST",
+                  text = "TEXT_PALLET_TOWN_OBJ9",
+                  x = 1,
+                  y = 7,
                 },
       },
       signs = {
@@ -2431,6 +2629,63 @@ return
       steps = {},
       textId = "TEXT_PALLET_TOWN_OBJ4",
     },
+    ["PALLET_TOWN/TEXT_PALLET_TOWN_OBJ8"] = {
+      mapId = "PALLET_TOWN",
+      steps = {
+        {
+                  kind = "raw",
+                  note = "check_flag EVENT_GOT_STARTER",
+                  row = {
+                    "check_flag",
+                    "EVENT_GOT_STARTER",
+                  },
+                },
+        {
+                  kind = "jump_if_no",
+                  name = "_row_3",
+                },
+        {
+                  kind = "jump_if_yes",
+                  name = "_row_4",
+                },
+        {
+                  kind = "label",
+                  name = "_row_3",
+                },
+        {
+                  kind = "show_text",
+                  text = "That earthquake last night brought down all this debris from the mountain. \12 We should have the east path out of Pallet clear soon.",
+                },
+        {
+                  kind = "jump",
+                  name = "end",
+                },
+        {
+                  kind = "label",
+                  name = "_row_4",
+                  path = "",
+                  text = "Now that the way east is clear you can get to Viridian City through the tunnel. \
+         That pokemon you have there should keep you safe.",
+                },
+        {
+                  kind = "show_text",
+                  text = "Now that the path east is clear you can get to Viridian City through the tunnel. \12 That pokemon you have there looks like it can take care of you. \12 We should have Route 1 clear a little later today.",
+                },
+      },
+      textId = "TEXT_PALLET_TOWN_OBJ8",
+    },
+    ["PALLET_TOWN/TEXT_PALLET_TOWN_OBJ9"] = {
+      mapId = "PALLET_TOWN",
+      steps = {
+        {
+                  kind = "show_text",
+                  text = "Man, those workers cleared out after getting Route 1 opened up.... \
+         I really need back into that cave west of Pallet. \
+         I feel like some species we once thought extinct may not be so after all. ",
+                },
+      },
+      textId = "TEXT_PALLET_TOWN_OBJ9",
+    },
     ["REDS_HOUSE_3F/TEXT_REDS_HOUSE_3F_NPC1"] = {
       mapId = "REDS_HOUSE_3F",
       steps = {},
@@ -2453,10 +2708,7 @@ return
     _PALLET_WESTTrainer1Won = "......",
     _PALLET_WESTWild8 = "Gyaoo!",
     _PALLET_WESTWild9 = "Gyaoo!",
-    _REDS_HOUSE_3F_OBJ1 = "MR.MIME Looks very nervous.... \
- *you reach out to comfort him* \
- *he recoils in fear* \
- Maybe you should stay out of mom's room......",
+    _REDS_HOUSE_3F_OBJ1 = "MR.MIME Looks very nervous.... \12 \"you reach out to comfort him* \12*he recoils in fear* \12 Maybe you should stay out of mom's room......",
     _ROUTE_1_BIRDTEXT = "The path to Pallet Town down Route 1 should be clear now. ",
     _ROUTE_1_BIRD_TEXT = "The path to Pallet through Route 1 should be open now. ",
     _RedsHouse1FMomWakeUpText = "MOM: Right.\
@@ -2465,6 +2717,8 @@ door, is looking\11for you. \
  \
  \
  and honey, please stay out of my room.",
+    _TEXTROUTE1OAKSPARCEL = "That construction crew said they were almost done... \12 Maybe I should take Route 1 back. ",
+    _TEXT_CHECK_ROUTE_1 = "I Bet route 1 is clear to Pallet Town now, I should go check. ",
     _VICTORY_ROAD_1FTrainer1After = "You're strong.",
     _VICTORY_ROAD_1FTrainer1Battle = "Let's fight!",
     _VICTORY_ROAD_1FTrainer1Won = "I lost...",

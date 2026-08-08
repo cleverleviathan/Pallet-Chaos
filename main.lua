@@ -47,6 +47,13 @@ return function(mod)
     },
   })
 
+  mod.content.items:register("MOMS_KEY", {
+    id = "MOMS_KEY",
+    name = "MOMS_KEY",
+    price = 9999,
+    tossable = false,
+  })
+
   mod.content.maps:register("PALLET_EAST", {
     blocks = {
       62,
@@ -446,7 +453,7 @@ return function(mod)
       {
               index = 4,
               movement = "STAY",
-              name = "PALLET_BOULDER",
+              name = "PALLET_BOULDER_1",
               range = "DOWN",
               sprite = "SPRITE_BOULDER",
               text = "TEXT_PALLET_TOWN_OBJ4",
@@ -456,7 +463,7 @@ return function(mod)
       {
               index = 5,
               movement = "STAY",
-              name = "PALLET_BOULDER",
+              name = "PALLET_BOULDER_1",
               range = "DOWN",
               sprite = "SPRITE_BOULDER",
               text = "TEXT_PALLET_TOWN_OBJ5",
@@ -482,6 +489,27 @@ return function(mod)
               text = "TEXT_PALLET_TOWN_OBJ7",
               x = 19,
               y = 9,
+            },
+      {
+              index = 8,
+              movement = "STAY",
+              name = "PALLET_WORKER_1",
+              range = "RIGHT",
+              sprite = "SPRITE_SAFARI_ZONE_WORKER",
+              text = "TEXT_PALLET_TOWN_OBJ8",
+              x = 18,
+              y = 8,
+            },
+      {
+              hidden = true,
+              index = 9,
+              movement = "STAY",
+              name = "PALLET_BLOCKED_SCIENTIST",
+              range = "DOWN",
+              sprite = "SPRITE_SCIENTIST",
+              text = "TEXT_PALLET_TOWN_OBJ9",
+              x = 1,
+              y = 7,
             },
     },
     signs = {
@@ -2282,10 +2310,7 @@ return function(mod)
   mod.content.text:override("_PALLET_WESTTrainer1Won", "......")
   mod.content.text:override("_PALLET_WESTWild8", "Gyaoo!")
   mod.content.text:override("_PALLET_WESTWild9", "Gyaoo!")
-  mod.content.text:override("_REDS_HOUSE_3F_OBJ1", "MR.MIME Looks very nervous.... \
- *you reach out to comfort him* \
- *he recoils in fear* \
- Maybe you should stay out of mom's room......")
+  mod.content.text:override("_REDS_HOUSE_3F_OBJ1", "MR.MIME Looks very nervous.... \12 \"you reach out to comfort him* \12*he recoils in fear* \12 Maybe you should stay out of mom's room......")
   mod.content.text:override("_ROUTE_1_BIRDTEXT", "The path to Pallet Town down Route 1 should be clear now. ")
   mod.content.text:override("_ROUTE_1_BIRD_TEXT", "The path to Pallet through Route 1 should be open now. ")
   mod.content.text:override("_RedsHouse1FMomWakeUpText", "MOM: Right.\
@@ -2294,6 +2319,8 @@ door, is looking\11for you. \
  \
  \
  and honey, please stay out of my room.")
+  mod.content.text:override("_TEXTROUTE1OAKSPARCEL", "That construction crew said they were almost done... \12 Maybe I should take Route 1 back. ")
+  mod.content.text:override("_TEXT_CHECK_ROUTE_1", "I Bet route 1 is clear to Pallet Town now, I should go check. ")
   mod.content.text:override("_VICTORY_ROAD_1FTrainer1After", "You're strong.")
   mod.content.text:override("_VICTORY_ROAD_1FTrainer1Battle", "Let's fight!")
   mod.content.text:override("_VICTORY_ROAD_1FTrainer1Won", "I lost...")
@@ -2480,6 +2507,56 @@ door, is looking\11for you. \
                   "end",
                 },
       },
+      TEXT_PALLET_TOWN_OBJ8 = {
+        {
+                  "check_flag",
+                  "EVENT_GOT_STARTER",
+                },
+        {
+                  "jump_if_false",
+                  "_row_3",
+                },
+        {
+                  "jump_if_true",
+                  "_row_4",
+                },
+        {
+                  "label",
+                  "_row_3",
+                },
+        {
+                  "show_text",
+                  "That earthquake last night brought down all this debris from the mountain. \12 We should have the east path out of Pallet clear soon.",
+                },
+        {
+                  "jump",
+                  "end",
+                },
+        {
+                  "label",
+                  "_row_4",
+                },
+        {
+                  "show_text",
+                  "Now that the path east is clear you can get to Viridian City through the tunnel. \12 That pokemon you have there looks like it can take care of you. \12 We should have Route 1 clear a little later today.",
+                },
+        {
+                  "label",
+                  "end",
+                },
+      },
+      TEXT_PALLET_TOWN_OBJ9 = {
+        {
+                  "show_text",
+                  "Man, those workers cleared out after getting Route 1 opened up.... \
+                   I really need back into that cave west of Pallet. \
+                   I feel like some species we once thought extinct may not be so after all. ",
+                },
+        {
+                  "label",
+                  "end",
+                },
+      },
     },
     onEnter = function(game, ow)
       ow:queueScript({
@@ -2497,10 +2574,99 @@ door, is looking\11for you. \
                   "PALLET_BOULDER",
                 },
         {
+                  "move_npc_to",
+                  8,
+                  11,
+                  1,
+                },
+        {
                   "label",
                   "end",
                 },
       })
+    end,
+  })
+
+  mod.content.map_scripts:register("REDS_HOUSE_1F", {
+    onStep = function(game, ow, x, y)
+      local cells = {
+        {
+                  rows = {
+                    {
+                                  "label",
+                                  "end",
+                                },
+                  },
+                  x = 0,
+                  y = 0,
+                },
+        {
+                  rows = {
+                    {
+                                  "label",
+                                  "end",
+                                },
+                  },
+                  x = 0,
+                  y = 0,
+                },
+        {
+                  rows = {
+                    {
+                                  "check_item",
+                                  "MOMS_KEY",
+                                },
+                    {
+                                  "jump_if_true",
+                                  "_row_6",
+                                },
+                    {
+                                  "jump_if_false",
+                                  "_row_4",
+                                },
+                    {
+                                  "label",
+                                  "_row_4",
+                                },
+                    {
+                                  "move_player",
+                                  "right",
+                                  1,
+                                },
+                    {
+                                  "show_text",
+                                  "Mom asked me to stay out, it's locked anyways.",
+                                },
+                    {
+                                  "jump",
+                                  "end",
+                                },
+                    {
+                                  "label",
+                                  "_row_6",
+                                },
+                    {
+                                  "warp",
+                                  "REDS_HOUSE_3F",
+                                  5,
+                                  1,
+                                  "left",
+                                },
+                    {
+                                  "label",
+                                  "end",
+                                },
+                  },
+                  x = 5,
+                  y = 1,
+                },
+      }
+      for _, c in ipairs(cells) do
+        if c.x == x and c.y == y then
+          ow:queueScript(c.rows)
+          return true
+        end
+      end
     end,
   })
 
@@ -2529,6 +2695,14 @@ door, is looking\11for you. \
     onEnter = function(game, ow)
       ow:queueScript({
         {
+                  "check_flag",
+                  "MOD_PALLET_CHAOS_ROUTE_1_OAKS_PARCEL",
+                },
+        {
+                  "jump_if_false",
+                  "end",
+                },
+        {
                   "check_item",
                   "OAKS_PARCEL",
                 },
@@ -2537,31 +2711,50 @@ door, is looking\11for you. \
                   "end",
                 },
         {
+                  "show_text",
+                  "They seemed close to done clearing Route 1.... \12 Maybe I should go check!",
+                },
+        {
+                  "clear_flag",
+                  "MOD_PALLET_CHAOS_ROUTE_1_OAKS_PARCEL",
+                },
+        {
                   "hide_object",
                   "ROUTE_1",
                   "ROUTE_1_BOULDER",
                 },
         {
-                  "wait",
-                  10,
+                  "hide_object",
+                  "PALLET_TOWN",
+                  "PALLET_WORKER_1",
                 },
         {
-                  "face",
-                  "east",
+                  "show_object",
+                  "PALLET_TOWN",
+                  "PALLET_BLOCKED_SCIENTIST",
                 },
         {
-                  "face_object",
-                  8,
-                  "west",
+                  "label",
+                  "end",
+                },
+      })
+    end,
+  })
+
+  mod.content.map_scripts:register("VIRIDIAN_MART", {
+    onEnter = function(game, ow)
+      ow:queueScript({
+        {
+                  "check_item",
+                  "OAKS_PARCEL",
                 },
         {
-                  "show_text",
-                  "_ROUTE_1_BIRD_TEXT",
+                  "jump_if_true",
+                  "end",
                 },
         {
-                  "face_object",
-                  8,
-                  "south",
+                  "set_flag",
+                  "MOD_PALLET_CHAOS_ROUTE_1_OAKS_PARCEL",
                 },
         {
                   "label",
@@ -2572,6 +2765,20 @@ door, is looking\11for you. \
   })
 
   -- event flags declared in the content editor:
+  --   MOD_
+  --   MOD_P
+  --   MOD_PA
+  --   MOD_PAL
+  --   MOD_PALL
+  --   MOD_PALLE
+  --   MOD_PALLET
+  --   MOD_PALLET_
+  --   MOD_PALLET_C
+  --   MOD_PALLET_CH
+  --   MOD_PALLET_CHA
+  --   MOD_PALLET_CHAO
+  --   MOD_PALLET_CHAOS
+  --   MOD_PALLET_CHAOS_
   --   MOD_PALLET_CHAOS_BEAT_PALLET_WEST_1
   --   MOD_PALLET_CHAOS_BEAT_VICTORY_ROAD_1F_1
   --   MOD_PALLET_CHAOS_BEAT_VICTORY_ROAD_1F_2
@@ -2591,6 +2798,37 @@ door, is looking\11for you. \
   --   MOD_PALLET_CHAOS_HIDE_OBJE
   --   MOD_PALLET_CHAOS_HIDE_OBJEC
   --   MOD_PALLET_CHAOS_HIDE_OBJECT
+  --   MOD_PALLET_CHAOS_M
+  --   MOD_PALLET_CHAOS_MO
+  --   MOD_PALLET_CHAOS_MOD
+  --   MOD_PALLET_CHAOS_R
+  --   MOD_PALLET_CHAOS_RO
+  --   MOD_PALLET_CHAOS_ROU
+  --   MOD_PALLET_CHAOS_ROUT
+  --   MOD_PALLET_CHAOS_ROUTE
+  --   MOD_PALLET_CHAOS_ROUTE_
+  --   MOD_PALLET_CHAOS_ROUTE_1
+  --   MOD_PALLET_CHAOS_ROUTE_1_
+  --   MOD_PALLET_CHAOS_ROUTE_1_O
+  --   MOD_PALLET_CHAOS_ROUTE_1_OA
+  --   MOD_PALLET_CHAOS_ROUTE_1_OAK
+  --   MOD_PALLET_CHAOS_ROUTE_1_OAKS
+  --   MOD_PALLET_CHAOS_ROUTE_1_OAKS_
+  --   MOD_PALLET_CHAOS_ROUTE_1_OAKS_P
+  --   MOD_PALLET_CHAOS_ROUTE_1_OAKS_PA
+  --   MOD_PALLET_CHAOS_ROUTE_1_OAKS_PAR
+  --   MOD_PALLET_CHAOS_ROUTE_1_OAKS_PARC
+  --   MOD_PALLET_CHAOS_ROUTE_1_OAKS_PARCE
+  --   MOD_PALLET_CHAOS_ROUTE_1_OAKS_PARCEL
+  --   MOD_PALLET_CHAOS_ROUTE_1_OAK_
+  --   MOD_PALLET_CHAOS_ROUTE_1_OAK_P
+  --   MOD_PALLET_CHAOS_ROUTE_1_OAK_PA
+  --   MOD_PALLET_CHAOS_ROUTE_1_OAK_PAR
+  --   MOD_PALLET_CHAOS_ROUTE_1_OAK_PARC
+  --   MOD_PALLET_CHAOS_ROUTE_1_OAK_PARCE
+  --   MOD_PALLET_CHAOS_ROUTE_1_OAK_PARCEL
+  --   MOD_PALLET_CHAS
+  --   MOD_PALLET_CHASO
 
   mod.content.map_songs:override("PALLET_EAST", "Music_PalletTown")
 
@@ -2598,6 +2836,16 @@ door, is looking\11for you. \
 
   mod.content.field:patch("intro", {
     studio = {},
+  })
+
+  mod.content.field:patch("hiddenItems", {
+    OAKS_LAB = {
+      {
+              item = "MOMS_KEY",
+              x = 1,
+              y = 3,
+            },
+    },
   })
 
   mod.content.field:patch("badgeGates", { ["PALLET_WEST"] = mod.DELETE })
